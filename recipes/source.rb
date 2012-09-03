@@ -65,6 +65,6 @@ bash "extract_nginx_source" do
 end
 
 execute "passenger_module" do
-  command "passenger-install-nginx-module --nginx-source-dir=#{Chef::Config[:file_cache_path]}/nginx-#{nginx_version} --auto --prefix=#{nginx_prefix} --extra-configure-flags=#{nginx_flags}"
+  command "passenger-install-nginx-module --nginx-source-dir=#{Chef::Config[:file_cache_path]}/nginx-#{nginx_version} --auto --prefix=#{nginx_prefix} --extra-configure-flags=\"#{nginx_flags.join(' ')}\""
   creates node[:passenger][:module_path]
 end
