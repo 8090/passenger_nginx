@@ -29,7 +29,7 @@ include_recipe "build-essential"
 
 nginx_version = node[:passenger][:nginx_version]
 nginx_flags = node[:passenger][:nginx_flags]
-nginx_prefix = node[:passnger][:nginx_prefix]
+nginx_prefix = node[:passenger][:nginx_prefix]
 
 case node[:platform]
 when "centos","redhat"
